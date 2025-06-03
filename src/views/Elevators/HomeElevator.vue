@@ -121,30 +121,30 @@
               <input
                 type="text"
                 placeholder="Primeiro nome"
-                class="p-3 rounded border w-full"
+                class="p-3 rounded border border-gray-400 w-full"
               />
               <input
                 type="text"
                 placeholder="Último nome"
-                class="p-3 rounded border w-full"
+                class="p-3 rounded border border-gray-400 w-full"
               />
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="email"
                 placeholder="E-mail"
-                class="p-3 rounded border w-full"
+                class="p-3 rounded border border-gray-400 w-full"
               />
               <input
                 type="tel"
                 placeholder="Telefone"
-                class="p-3 rounded border w-full"
+                class="p-3 rounded border border-gray-400 w-full"
               />
             </div>
             <textarea
               rows="4"
               placeholder="Mensagem"
-              class="p-3 rounded border w-full"
+              class="p-3 rounded border border-gray-400 w-full"
             ></textarea>
             <button
               type="submit"

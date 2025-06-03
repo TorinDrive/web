@@ -6,16 +6,26 @@
       <img src="@/assets/images/logo.png" alt="Logo" class="h-10" />
     </div>
 
-    <nav class="hidden md:flex space-x-6 text-red-600 font-semibold">
-      <router-link to="/elevators/home" class="hover:underline"
-        >Home</router-link
-      >
-      <router-link to="/elevators/motors" class="hover:underline"
-        >Produtos</router-link
-      >
-      <router-link to="/clientes" class="hover:underline">Clientes</router-link>
-      <router-link to="/catalogo" class="hover:underline">Catálogo</router-link>
-      <router-link to="/contato" class="hover:underline">Contatos</router-link>
+    <nav class="hidden md:flex items-center text-red-600 font-semibold gap-3">
+      <router-link to="/elevators/home" class="hover:underline">
+        Home
+      </router-link>
+      <div class="w-0.5 h-6 bg-red-600 mx-2 rounded"></div>
+      <router-link to="/elevators/motors" class="hover:underline">
+        Produtos
+      </router-link>
+      <div class="w-0.5 h-6 bg-red-600 mx-2 rounded"></div>
+      <router-link to="/clientes" class="hover:underline">
+        Clientes
+      </router-link>
+      <div class="w-0.5 h-6 bg-red-600 mx-2 rounded"></div>
+      <router-link to="/catalogo" class="hover:underline">
+        Catálogo
+      </router-link>
+      <div class="w-0.5 h-6 bg-red-600 mx-2 rounded"></div>
+      <router-link to="/contato" class="hover:underline">
+        Contatos
+      </router-link>
     </nav>
 
     <button
@@ -25,5 +35,3 @@
     </button>
   </header>
 </template>
-
-<script setup></script>

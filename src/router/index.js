@@ -7,6 +7,9 @@ import ContactSession from "@/views/SessionSelection/About.vue";
 //Session Elevators Routes
 import HomeElevator from "@/views/Elevators/HomeElevator.vue";
 import MotorsElevator from "@/views/Elevators/MotorsElevator.vue";
+import MachineTypes from "@/views/Elevators/MachineTypes.vue";
+//
+import MotorSGDView from "@/views/Elevators/Motors/MotorSGDView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +43,16 @@ const router = createRouter({
       path: "/elevators/motors",
       name: "MotorsElevator",
       component: MotorsElevator,
+    },
+    {
+      path: "/elevators/com-engrenagem/sgd",
+      name: "SGDMachineTypes",
+      component: MotorSGDView,
+    },
+    {
+      path: "/elevators/sem-engrenagem/sgl",
+      name: "MachineTypes",
+      component: MachineTypes,
     },
   ],
 });

@@ -100,7 +100,7 @@ const comEngrenagem = [
   },
   {
     title: "Linha SGD",
-    to: "/com-engrenagem/sgd",
+    to: "/elevators/com-engrenagem/sgd",
     img: "/src/assets/images/Motors/sgd_motor.png",
   },
 ];
@@ -131,8 +131,8 @@ const semEngrenagem = [
   },
   {
     title: "Linha SGL<br />Aplicação em Geral",
-    to: "/sem-engrenagem/sgl",
-    img: "/src/assets/images/Motors/sgl_motor.png", // Corrigido aqui para sgl_motor.png
+    to: "/elevators/sem-engrenagem/sgl",
+    img: "/src/assets/images/Motors/sgl_motor.png",
   },
 ];
 </script>
