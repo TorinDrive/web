@@ -3,7 +3,7 @@
     <MenuElevator />
     <SectionHeader title="Maquínas de Tração" />
 
-    <div class="p-6 bg-gray-100 min-h-screen">
+    <div class="max-w-7xl right-0 left-0 mx-auto">
       <!-- Cabeçalho da máquina -->
       <div
         class="bg-white shadow rounded-xl p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6"
@@ -33,47 +33,58 @@
       </div>
 
       <!-- Tabela de dados -->
-      <div class="overflow-auto bg-white shadow rounded-xl">
-        <table class="min-w-full text-sm text-center">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="p-2">Código</th>
-              <th class="p-2">Capacidade (kg)</th>
-              <th class="p-2">Velocidade (m/s)</th>
-              <th class="p-2">Potência (kW)</th>
-              <th class="p-2">Polos</th>
-              <th class="p-2">Redução</th>
-              <th class="p-2">Tensão de Alimentação (Vca)</th>
-              <th class="p-2">Corrente (A)</th>
-              <th class="p-2">Rotação Motor (rpm)</th>
-              <th class="p-2">Diâmetro</th>
-              <th class="p-2">Cabo #</th>
-              <th class="p-2">Ø</th>
-              <th class="p-2">Passo</th>
-              <th class="p-2">Detalhes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in machineData" :key="index" class="border-t">
-              <td class="p-2">{{ item.codigo }}</td>
-              <td class="p-2">{{ item.capacidade_kg }}</td>
-              <td class="p-2">{{ item.velocidade_ms }}</td>
-              <td class="p-2">{{ item.potencia_kw }}</td>
-              <td class="p-2">{{ item.polos }}</td>
-              <td class="p-2">{{ item.reducao }}</td>
-              <td class="p-2">{{ item.tensao_alimentacao_vca }}</td>
-              <td class="p-2">{{ item.corrente_a }}</td>
-              <td class="p-2">{{ item.rotacao_motor_rpm }}</td>
-              <td class="p-2">{{ item.diametro }}</td>
-              <td class="p-2">{{ item.cabo_numero }}</td>
-              <td class="p-2">{{ item.diametro_externo}}</td>
-              <td class="p-2">{{ item.passo}}</td>
-              <td class="p-2 text-blue-600 underline cursor-pointer">
-                Clique aqui para ver detalhadamente
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="w-full">
+        <div class="overflow-x-auto shadow rounded-xl mx-auto">
+          <table class="min-w-full text-sm text-center bg-white">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-3 py-2 whitespace-nowrap">Código</th>
+                <th class="px-3 py-2 whitespace-nowrap">Capacidade (kg)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Velocidade (m/s)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Potência (kW)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Polos</th>
+                <th class="px-3 py-2 whitespace-nowrap">Redução</th>
+                <th class="px-3 py-2 whitespace-nowrap">Tensão (Vca)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Corrente (A)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Rotação (rpm)</th>
+                <th class="px-3 py-2 whitespace-nowrap">Diâmetro</th>
+                <th class="px-3 py-2 whitespace-nowrap">Cabo #</th>
+                <th class="px-3 py-2 whitespace-nowrap">Ø</th>
+                <th class="px-3 py-2 whitespace-nowrap">Passo</th>
+                <th class="px-3 py-2 whitespace-nowrap">Detalhes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(item, index) in machineData"
+                :key="index"
+                class="border-t hover:bg-gray-50 transition"
+              >
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.codigo }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.capacidade_kg }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.velocidade_ms }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.potencia_kw }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.polos }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.reducao }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.tensao_alimentacao_vca }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.corrente_a }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.rotacao_motor_rpm }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.diametro }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.cabo_numero }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.diametro_externo }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">{{ item.passo }}</td>
+                <td class="px-3 py-2 whitespace-nowrap">
+                  <RouterLink
+                  to="/elevators/sem-engrenagem/details"
+                  class="text-blue-600 underline cursor-pointer"
+                  >
+                  Ver detalhes
+                  </RouterLink>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -88,7 +99,6 @@ import BackGround from "@/components/BackGround.vue";
 import Footer from "@/components/Footer.vue";
 import MenuElevator from "@/components/Menus/MenuElevator.vue";
 import SectionHeader from "@/components/SectionHeader.vue";
-import Table from "@/components/Table.vue";
 
 const machineData = ref([]);
 

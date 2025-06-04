@@ -10,6 +10,7 @@ import MotorsElevator from "@/views/Elevators/MotorsElevator.vue";
 import MachineTypes from "@/views/Elevators/MachineTypes.vue";
 //
 import MotorSGDView from "@/views/Elevators/Motors/MotorSGDView.vue";
+import MotorsDetails from "@/views/Elevators/MotorsDetails.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,6 +49,11 @@ const router = createRouter({
       path: "/elevators/com-engrenagem/sgd",
       name: "SGDMachineTypes",
       component: MotorSGDView,
+    },
+    {
+      path: "/elevators/sem-engrenagem/details",
+      name: "MachineDetails",
+      component: MotorsDetails,
     },
     {
       path: "/elevators/sem-engrenagem/sgl",
