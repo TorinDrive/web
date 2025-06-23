@@ -18,19 +18,13 @@
       >
         <!--Card: Compressor-->
         <div
-          class="border-4 border-white rounded-lg shadow-2xl relative overflow-hidden w-full max-w-xs sm:max-w-sm md:max-w-md h-96 group"
+          class="border-4 border-white rounded-lg shadow-2xl relative overflow-hidden w-full max-w-xs sm:max-w-sm md:max-w-md h-96 flex items-center justify-center bg-gray-800 opacity-80"
         >
-          <img
-            src="../../assets/images/SessionImages/compressor.png"
-            alt="compressor"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div
-            class="absolute inset-x-0 bottom-0 bg-black/80 px-4 py-4 text-white text-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
-          >
-            <p class="text-lg font-bold border-b border-white">Compressor de Ar</p>
-            <p class="text-sm mt-2">
-              Potência, eficiência e confiabilidade para o seu processo industrial. Nossos compressores garantem alto desempenho com economia de energia, atendendo às mais diversas aplicações com máxima segurança e produtividade.
+          <div class="text-center px-4">
+            <p class="text-lg font-bold text-white mb-2">Compressor de Ar</p>
+            <p class="text-yellow-400 font-semibold text-base">Em breve</p>
+            <p class="text-sm text-gray-200 mt-2">
+              Este recurso está em manutenção e estará disponível em breve.
             </p>
           </div>
         </div>
@@ -57,23 +51,18 @@
         </router-link>
 
         <!--Card: Ventilador-->
-        <div
-          class="border-4 border-white rounded-lg shadow-2xl relative overflow-hidden w-full max-w-xs sm:max-w-sm md:max-w-md h-96 group"
+      <div
+          class="border-4 border-white rounded-lg shadow-2xl relative overflow-hidden w-full max-w-xs sm:max-w-sm md:max-w-md h-96 flex items-center justify-center bg-gray-800 opacity-80"
         >
-          <img
-            src="../../assets/images/SessionImages/fan.png"
-            alt="ventilador"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div
-            class="absolute inset-x-0 bottom-0 bg-black/80 px-4 py-4 text-white text-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
-          >
-            <p class="text-lg font-bold border-b border-white">Ventiladores</p>
-            <p class="text-sm mt-2">
-              Ventilação industrial de alta performance com eficiência energética. Ideal para ambientes exigentes, nossos ventiladores garantem circulação de ar potente e contínua.
+          <div class="text-center px-4">
+            <p class="text-lg font-bold text-white mb-2">Ventilador</p>
+            <p class="text-yellow-400 font-semibold text-base">Em breve</p>
+            <p class="text-sm text-gray-200 mt-2">
+              Este recurso está em manutenção e estará disponível em breve.
             </p>
           </div>
         </div>
+
       </div>
     </div>
 

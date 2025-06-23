@@ -1,83 +1,86 @@
+//elevators/com-engrenagem/sgd
 <template>
   <BackGround color1Intensity="40" color2Intensity="60">
     <MenuElevator />
-    <SectionHeader title="Maquínas de Tração" />
+    <!-- O título agora vem de uma prop, tornando o componente reutilizável -->
+    <SectionHeader :title="pageTitle" />
 
-    <div class="p-6 bg-gray-100 min-h-screen">
-      <!-- Cabeçalho da máquina -->
-      <div
-        class="bg-white shadow rounded-xl p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6"
-      >
-        <div class="space-y-2 text-sm text-gray-700">
-          <h2 class="text-2xl font-bold text-black">SGL12</h2>
-          <ul class="list-disc ml-5">
-            <li><strong>Tração Nominal:</strong> 2:1</li>
-            <li><strong>Carga Estática:</strong> 2.000kg</li>
-            <li>
-              <strong>Alimentação do Freio:</strong> 110Vcc/2×0,84A a 450kg
-            </li>
-            <li><strong>Peso Aproximado:</strong> 190kg</li>
-            <li>
-              <strong>Resgate Manual Remoto:</strong> Disponível Opcionalmente
-            </li>
-            <li><strong>Instalação:</strong> Horizontal</li>
-            <li><strong>Aplicação:</strong> Em Geral</li>
-          </ul>
-        </div>
-
-        <!-- Imagens -->
-        <div class="flex gap-4 mt-4 lg:mt-0">
-          <img src="" alt="Máquina" class="w-24 h-24 object-contain" />
-          <img src="" alt="Desenho Técnico" class="w-24 h-24 object-contain" />
-        </div>
+    <div class="max-w-7xl mx-auto  py-8 min-h-screen">
+      <!-- Usando o componente LoadingSpinner -->
+      <div v-if="isLoading" class="flex flex-col justify-center items-center h-96">
+        <LoadingSpinner color="red" :message="`A carregar modelos ${pageTitle}...`" />
       </div>
 
-      <!-- Tabela de dados -->
-      <div class="overflow-auto bg-white shadow rounded-xl">
-        <table class="min-w-full text-sm text-center">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="p-2">Código</th>
-              <th class="p-2">Capacidade (kg)</th>
-              <th class="p-2">Velocidade (m/s)</th>
-              <th class="p-2">Potência (kW)</th>
-              <th class="p-2">Tensão de Alimentação (Vca)</th>
-              <th class="p-2">Corrente (A)</th>
-              <th class="p-2">Torque (Nm)</th>
-              <th class="p-2">Frequência (Hz)</th>
-              <th class="p-2">Rotação Motor (rpm)</th>
-              <th class="p-2">Especificação da polia (mm)</th>
-              <th class="p-2">Cabo #</th>
-              <th class="p-2">Ø</th>
-              <th class="p-2">Passo</th>
-              <th class="p-2">Detalhes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(item, index) in machineData"
-              :key="index"
-              class="border-t"
-            >
-              <td class="p-2">{{ item.codigo }}</td>
-              <td class="p-2">{{ item.capacidade }}</td>
-              <td class="p-2">{{ item.velocidade }}</td>
-              <td class="p-2">{{ item.potencia }}</td>
-              <td class="p-2">{{ item.tensao }}</td>
-              <td class="p-2">{{ item.corrente }}</td>
-              <td class="p-2">{{ item.torque }}</td>
-              <td class="p-2">{{ item.frequencia }}</td>
-              <td class="p-2">{{ item.rotacao }}</td>
-              <td class="p-2">{{ item.polia }}</td>
-              <td class="p-2">{{ item.cabo }}</td>
-              <td class="p-2">{{ item.diametro }}</td>
-              <td class="p-2">{{ item.passo }}</td>
-              <td class="p-2 text-blue-600 underline cursor-pointer">
-                Clique aqui para ver detalhadamente
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Estado de Erro -->
+      <div v-else-if="error" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-6 rounded-lg shadow-md mx-auto max-w-4xl">
+        <h3 class="font-bold text-xl mb-2">Ocorreu um Erro</h3>
+        <p>Não foi possível carregar os dados. Verifique a API ou a conexão.</p>
+        <p class="text-sm mt-3 bg-red-200 p-2 rounded font-mono">Detalhe: {{ error }}</p>
+      </div>
+      
+      <!-- Conteúdo Principal -->
+      <div v-else-if="machineData.length > 0">
+        <!-- Tabela de dados APRIMORADA E COMPLETA -->
+        <div class="w-full">
+          <div class="overflow-x-auto shadow-xl rounded-xl">
+            <table class="min-w-full text-sm text-center bg-white">
+              <thead class="bg-gray-800 text-white uppercase tracking-wider text-xs">
+                <tr>
+                  <th class="px-4 py-3">Código</th>
+                  <th class="px-4 py-3">Capacidade (kg)</th>
+                  <th class="px-4 py-3">Velocidade (m/s)</th>
+                  <th class="px-4 py-3">Potência (kW)</th>
+                  <th class="px-4 py-3">Polos</th>
+                  <th class="px-4 py-3">Redução</th>
+                  <th class="px-4 py-3">Tensão (Vca)</th>
+                  <th class="px-4 py-3">Corrente (A)</th>
+                  <th class="px-4 py-3">Rotação (rpm)</th>
+                  <th class="px-4 py-3">Diâmetro</th>
+                  <th class="px-4 py-3">Cabo #</th>
+                  <th class="px-4 py-3">Ø</th>
+                  <th class="px-4 py-3">Passo</th>
+                  <th class="px-4 py-3 sticky right-0 bg-gray-800 z-10">Detalhes</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr
+                  v-for="item in machineData"
+                  :key="item.id"
+                  @click="goToDetails(item.id)"
+                  class="border-t even:bg-gray-50 hover:bg-red-50 transition-colors duration-200 cursor-pointer"
+                >
+                  <td class="px-4 py-3 whitespace-nowrap font-semibold text-gray-900">{{ item.codigo }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.capacidade_kg }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.velocidade_ms }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.potencia_kw }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.polos }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.reducao || '-' }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.tensao_alimentacao_vca }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.corrente_a || '-' }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.rotacao_motor_rpm }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.diametro }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.cabo_numero }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.diametro_externo }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap">{{ item.passo || '-' }}</td>
+                  <td class="px-4 py-3 whitespace-nowrap sticky right-0 bg-white md:bg-transparent z-0">
+                    <!-- O link para os detalhes agora é construído dinamicamente com as props -->
+                    <RouterLink
+                      :to="`${detailsRouteBase}/${item.id}`"
+                      class="inline-flex items-center text-red-600 hover:text-red-800 font-bold hover:underline"
+                    >
+                      Ver
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </RouterLink>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Mensagem se nenhum dado for encontrado -->
+      <div v-else class="text-center p-10 bg-yellow-100 rounded-lg shadow">
+          <p class="font-semibold text-yellow-800">Nenhum modelo encontrado para esta linha.</p>
       </div>
     </div>
 
@@ -86,28 +89,53 @@
 </template>
 
 <script setup>
+import { ref, watch } from "vue";
+import { useRouter } from 'vue-router';
+import axios from "axios";
+// Importe seus componentes
 import BackGround from "@/components/BackGround.vue";
 import Footer from "@/components/Footer.vue";
 import MenuElevator from "@/components/Menus/MenuElevator.vue";
 import SectionHeader from "@/components/SectionHeader.vue";
-import Table from "@/components/Table.vue";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 
-const machineData = [
-  {
-    codigo: "SGL12-31PO-8MM",
-    capacidade: 320,
-    velocidade: 1.0,
-    potencia: 2.5,
-    tensao: "380 ou 220",
-    corrente: "7 ou 12",
-    torque: 220,
-    frequencia: 31.5,
-    rotacao: 118,
-    polia: 325,
-    cabo: 3,
-    diametro: 8,
-    passo: 12,
-  },
-  // Repita conforme necessário...
-];
+// Define as props para tornar o componente reutilizável
+const props = defineProps({
+  pageTitle: { type: String, required: true },
+  apiEndpoint: { type: String, required: true },
+  detailsRouteBase: { type: String, required: true }
+});
+
+const router = useRouter();
+
+// Estados reativos
+const machineData = ref([]);
+const isLoading = ref(true);
+const error = ref(null);
+
+// Função para buscar os dados da API
+const fetchData = async () => {
+  isLoading.value = true;
+  error.value = null;
+  try {
+    const apiUrlBase = "http://127.0.0.1:8000"; // URL base da sua API Laravel
+    // A chamada agora usa o `apiEndpoint` passado como prop
+    const response = await axios.get(`${apiUrlBase}${props.apiEndpoint}`);
+    machineData.value = response.data;
+  } catch (err) {
+    console.error("Erro ao buscar dados da API:", err);
+    error.value = err.message || "Não foi possível conectar à API.";
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+// Observa mudanças nas props. Se a rota mudar para outra página de listagem
+// que usa o mesmo componente, os dados serão recarregados.
+watch(() => props.apiEndpoint, fetchData, { immediate: true });
+
+// Função para navegar para a página de detalhes ao clicar na linha
+const goToDetails = (itemId) => {
+  router.push(`${props.detailsRouteBase}/${itemId}`);
+};
 </script>
