@@ -5,7 +5,7 @@
 
     <div class="w-full px-4 lg:px-6">
       <section
-        class="flex flex-col lg:flex-row items-start justify-center py-8 md:py-16 gap-8 lg:gap-12 w-full max-w-7xl mx-auto"
+        class="flex flex-col lg:flex-row items-start justify-center py-8 md:py-16 gap-8 lg:gap-12 w-full max-w-7xl mx-auto -translate-y-10"
       >
         <!-- Coluna da esquerda - Com engrenagem -->
         <div class="w-full bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
@@ -64,13 +64,12 @@
       </section>
 
       <!-- Seções inferiores -->
-      <SectionHeader
-        title="RELAÇÃO DE TRANSFORMAÇÃO: TRAÇÃO 1:1 <-> TRAÇÃO 2:1 "
-      />
+      <SectionHeader title="RELAÇÃO DE TRANSFORMAÇÃO: TRAÇÃO 1:1 <-> TRAÇÃO 2:1 " class="-translate-y-8" />
+       
       <img
         src="../../assets/images/Motors/Relationship.png"
         alt="Relação de transformação"
-        class="w-full max-w-7xl mx-auto my-6 md:my-8 rounded-lg shadow-lg"
+        class="w-full max-w-7xl mx-auto my-1 md:my-2 rounded-lg shadow-lg"
       />
       <SectionHeader title="TABELAS DE UNIDADES" />
       <Table />

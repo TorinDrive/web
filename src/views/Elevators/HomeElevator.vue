@@ -4,7 +4,7 @@
     <MenuElevator />
     <!-- Hero Section -->
     <section
-      class="flex flex-col lg:flex-row items-center justify-between py-16 mx-auto max-w-7xl"
+      class="flex flex-col lg:flex-row items-center justify-between py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-0 mx-auto max-w-7xl"
     >
       <div class="max-w-xl space-y-6 text-center lg:text-left">
         <h1 class="text-4xl lg:text-5xl font-bold text-red-600">
@@ -41,7 +41,7 @@
     </section>
 
     <!-- Seção: Por que escolher a TORINDRIVE -->
-    <section class="py-16 mx-auto max-w-7xl">
+    <section class="py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-0 mx-auto max-w-7xl">
       <div class="w-full bg-white py-0.5 px-5"></div>
       <h2 class="text-center text-2xl font-bold text-red-600 mb-12 mt-10">
         Por que Escolher a TORINDRIVE?
@@ -108,12 +108,12 @@
 
     <!-- Seção: Formulário de Contato -->
     <section
-      class="bg-white px-6 lg:px-20 py-16 mx-auto max-w-7xl rounded-2xl border-t"
+      class="bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-16 max-w-7xl rounded-2xl border-t mx-auto flex justify-center items-center"
     >
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-8">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 p-0 lg:p-8 items-center">
         <!-- Formulário -->
         <div>
-          <h3 class="text-xl font-bold mb-6">
+          <h3 class="text-xl font-bold mb-6 text-center lg:text-left">
             Vamos conversar sobre seu projeto?
           </h3>
           <form class="space-y-4">
@@ -156,7 +156,7 @@
         </div>
 
         <!-- Informações de contato -->
-        <div class="space-y-4">
+        <div class="space-y-4 text-center lg:text-left">
           <h3 class="text-xl font-bold">Queremos ouvir você!</h3>
           <p>
             Preencha o formulário ao lado e nossa equipe entrará em contato o
@@ -166,7 +166,7 @@
           <p>📞 Atendimento rápido, especializado e com total segurança.</p>
           <div class="space-y-2">
             <p>📱 (99) 9999-9999</p>
-            <p>📷 @seuinstagram</p>
+            <p>📷 @torindrivedobrasil</p>
           </div>
         </div>
       </div>
