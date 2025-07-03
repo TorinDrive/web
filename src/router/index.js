@@ -43,7 +43,7 @@ const router = createRouter({
       props: {
         pageTitle: "Máquinas de Tração - Linha SGD", // Título da página
         apiEndpoint: "/api/mr_sgd00", // Endpoint da API para esta linha
-        detailsRouteBase: "/details/mr_sgd00" // Rota base para os detalhes
+        detailsRouteBase: "/details" // Rota base para os detalhes
       }
     },
     {

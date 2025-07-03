@@ -145,6 +145,6 @@ onMounted(async () => {
 });
 
 const goToDetails = (tableName, itemId) => {
-  router.push(`${props.detailsRouteBase}/${itemId}`);
+  router.push(`${props.detailsRouteBase}/${tableName}/${itemId}`);
 };
 </script>
