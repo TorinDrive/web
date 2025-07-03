@@ -46,17 +46,6 @@ const router = createRouter({
         detailsRouteBase: "/details" // Rota base para os detalhes
       }
     },
-    {
-      path: "/elevators/sem-engrenagem/sgl",
-      name: "MachineTypesSGL",
-      component: MachineTypes, // Usando o mesmo componente genérico
-      props: {
-        pageTitle: "Máquinas de Tração - Linha SGL",
-        apiEndpoint: "/api/mr_sgl12", // Endpoint diferente!
-        detailsRouteBase: "/details/mr_sgl12" // Rota base diferente!
-      }
-    },
-
     // =================================================================
     // == ROTA DE DETALHES DINÂMICA E REUTILIZÁVEL ==
     // =================================================================
