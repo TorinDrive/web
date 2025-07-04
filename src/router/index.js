@@ -11,13 +11,23 @@ import HomeElevator from "@/views/Elevators/HomeElevator.vue";
 import MotorsElevator from "@/views/Elevators/MotorsElevator.vue";
 import ComponentesElevators from '@/views/Elevators/ComponentesView.vue';
 
+import GearedMachine from '@/views/Elevators/GearedMachine.vue';
+import GearlessMachine from "@/views/Elevators/GearlessMachine.vue"
+
+import ComingSoon from "@/views/ComingSoon.vue";
 // =================================================================
 // == COMPONENTES GENÉRICOS QUE SERÃO REUTILIZADOS ==
 // =================================================================
 // Certifique-se que o arquivo MachineTypes.vue contém o código do Canvas "vue_reusable_listing_page"
-import MachineTypes from "@/views/Elevators/MachineTypes.vue"; 
+import MachineTypesSGD from "@/views/Elevators/MachineTypesSGD.vue";
+import MachineTypesDMGHGL from "@/views/Elevators/MachineTypesDMG-HGL.vue";
+import MachineTypesBGL from "@/views/Elevators/MachineTypesBGL.vue";
+import MachineTypesRGL from "@/views/Elevators/MachineTypesRGL.vue";
+import MachineTypesSGL from "@/views/Elevators/MachineTypesSGL.vue";
 // Certifique-se que o arquivo MotorsDetails.vue contém o código do Canvas "vue_pagina_detalhes_dinamica"
 import MotorsDetails from "@/views/Elevators/MotorsDetails.vue";
+
+;
 // =================================================================
 
 const router = createRouter({
@@ -33,19 +43,88 @@ const router = createRouter({
     { path: "/elevators/components", name: "ComponentesElevators", component: ComponentesElevators },
 
 
+    { path: "/elevators/geared-machine", name: "GearedMachine", component: GearedMachine },
+    { path: "/elevators/gearless-machine", name: "GearlessMachine", component: GearlessMachine },
+
+
+    { path: "/em-desenvolvimento", name: "commingSoon", component: ComingSoon },
+
+
+
+
+
+
+
+
+
+
+
+
     // =================================================================
     // == ROTAS DE LISTAGEM USANDO O COMPONENTE REUTILIZÁVEL ==
     // =================================================================
     {
       path: "/elevators/com-engrenagem/sgd",
       name: "MachineTypesSGD",
-      component: MachineTypes, // Usando o componente genérico
+      component: MachineTypesSGD, // Usando o componente genérico
       props: {
         pageTitle: "Máquinas de Tração - Linha SGD", // Título da página
         apiEndpoint: "/api/mr_sgd00", // Endpoint da API para esta linha
         detailsRouteBase: "/details" // Rota base para os detalhes
       }
     },
+    // =================================================================    
+    {
+      path: "/elevators/sem-engrenagem/dmg-hgl",
+      name: "MachineTypesDMG-HGL",
+      component: MachineTypesDMGHGL, // Usando o componente genérico
+      props: {
+        pageTitle: "Máquinas de Tração - Linha DMG-HGL", // Título da página
+        apiEndpoint: "/api/mr_sgd00", // Endpoint da API para esta linha
+        detailsRouteBase: "/details" // Rota base para os detalhes
+      }
+    },
+     // =================================================================    
+    {
+      path: "/elevators/sem-engrenagem/bgl",
+      name: "MachineTypesBGL",
+      component: MachineTypesBGL, // Usando o componente genérico
+      props: {
+        pageTitle: "Máquinas de Tração - Linha BGL", // Título da página
+        apiEndpoint: "/api/mr_bgl225", // Endpoint da API para esta linha
+        detailsRouteBase: "/details" // Rota base para os detalhes
+      }
+    },
+    {
+      path: "/elevators/sem-engrenagem/rgl",
+      name: "MachineTypesRGL",
+      component: MachineTypesRGL, // Usando o componente genérico
+      props: {
+        pageTitle: "Máquinas de Tração - Linha RGL", // Título da página
+        apiEndpoint: "/api/mr_bgl225", // Endpoint da API para esta linha
+        detailsRouteBase: "/details" // Rota base para os detalhes
+      }
+    },
+    {
+      path: "/elevators/sem-engrenagem/sgl",
+      name: "MachineTypesSGL",
+      component: MachineTypesSGL, // Usando o componente genérico
+      props: {
+        pageTitle: "Máquinas de Tração - Linha SGL", // Título da página
+        apiEndpoint: "/api/mr_bgl225", // Endpoint da API para esta linha
+        detailsRouteBase: "/details" // Rota base para os detalhes
+      }
+    },
+
+
+
+
+
+
+
+
+
+
     // =================================================================
     // == ROTA DE DETALHES DINÂMICA E REUTILIZÁVEL ==
     // =================================================================
