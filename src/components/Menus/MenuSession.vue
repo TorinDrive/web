@@ -17,7 +17,7 @@
       >
         <p class="text-lg sm:text-xl md:text-2xl text-shadow-2xs"></p>
       </router-link>
-      <img src="../../assets/images/logo.png" alt="logo" class="w-32 sm:w-32 md:w-4 h-full" />
+      <img src="../../assets/images/logo.png" alt="logo" class="w-40 sm:w-48 md:w-56 h-auto" />
       <router-link
         to="/about"
         class="flex items-center justify-center p-1 sm:p-2 hover:bg-gray-300 rounded-lg cursor-pointer transition duration-300 ease-in-out"

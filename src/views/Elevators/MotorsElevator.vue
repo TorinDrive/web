@@ -98,11 +98,11 @@ import Table from "@/components/Table.vue";
 const comEngrenagem = [
   {
     title: "Diferenciais Especificação",
-    to: "/com-engrenagem/diferenciais",
+    to: "/elevators/geared-machine",
   },
   {
     title: "Dados Técnicos Solução Completa",
-    to: "/com-engrenagem/tecnicos",
+    to: "/em-desenvolvimento",
   },
   {
     title: "Linha SGD",
@@ -114,25 +114,25 @@ const comEngrenagem = [
 const semEngrenagem = [
   {
     title: "Diferenciais Especificação<br />Dados Técnicos",
-    to: "/sem-engrenagem/diferenciais",
+    to: "/elevators/gearless-machine",
   },
   {
     title: "Solução Completa",
-    to: "/sem-engrenagem/solucao-completa",
+    to: "/em-desenvolvimento",
   },
   {
     title: "Linha DMG e HGL<br />Aplicação Home Lift",
-    to: "/sem-engrenagem/dmg-hgl",
+    to: "/elevators/sem-engrenagem/dmg-hgl",
     img: "/src/assets/images/Motors/homelift_motor.png",
   },
   {
     title: "Linha BGL<br />Aplicação com Cinta",
-    to: "/sem-engrenagem/bgl",
+    to: "/elevators/sem-engrenagem/bgl",
     img: "/src/assets/images/Motors/bgl_motor.png",
   },
   {
     title: "Linha RGL<br />Aplicação com Restrição em Espaço",
-    to: "/sem-engrenagem/rgl",
+    to: "/elevators/sem-engrenagem/rgl",
     img: "/src/assets/images/Motors/rgl_motor.png",
   },
   {

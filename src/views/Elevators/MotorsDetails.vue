@@ -4,7 +4,7 @@
     <button class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
   </div>
 
-  <BackGround color1Intensity="40" color2Intensity="60">
+  <BackGround :color1Intensity="20" :color2Intensity="90">
     <MenuElevator />
     <SectionHeader :title="pageTitle" />
 
