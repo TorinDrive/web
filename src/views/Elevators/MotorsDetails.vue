@@ -125,7 +125,7 @@ import Footer from "@/components/Footer.vue";
 import MenuElevator from "@/components/Menus/MenuElevator.vue";
 import SectionHeader from "@/components/SectionHeader.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
-import DetailCard from "@/components/DetailCard.vue"; // Componente para os cards
+import DetailCard from "@/components/DetailCard.vue"; 
 
 const router = useRouter();
 

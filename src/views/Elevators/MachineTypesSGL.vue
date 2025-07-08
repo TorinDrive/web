@@ -84,6 +84,7 @@ import Footer from "@/components/Footer.vue";
 import MenuElevator from "@/components/Menus/MenuElevator.vue";
 import SectionHeader from "@/components/SectionHeader.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
+import  api  from "@/services/api.js"; 
 
 const props = defineProps({
   pageTitle: {
@@ -109,9 +110,6 @@ const machineLines = ref([
   { title: 'Linha SGL514', tableName: 'mr_sgl514', data: [] },
   { title: 'Linha SGL614', tableName: 'mr_sgl614', data: [] }, //
   { title: 'Linha SGL636', tableName: 'mr_sgl636', data: [] },
-
-
-
 ]);
 
 const hasData = computed(() => {
@@ -122,10 +120,9 @@ onMounted(async () => {
   isLoading.value = true;
   error.value = null;
   try {
-    const apiUrlBase = "http://127.0.0.1:8000/api";
     
-    const requests = machineLines.value.map(line => 
-      axios.get(`${apiUrlBase}/${line.tableName}`).catch(err => {
+     const requests = machineLines.value.map(line => 
+      api.get(`/${line.tableName}`).catch(err => { 
         console.warn(`Falha ao buscar dados para ${line.tableName}:`, err.message);
         return { data: [], error: true, tableName: line.tableName };
       })

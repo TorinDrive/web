@@ -2,7 +2,6 @@
   <footer class="text-white">
     <div class="max-w-7xl mx-auto mt-10">
       <div class="flex flex-wrap justify-between border-t-2 border-white py-4">
-        <!-- Logo -->
         <div class="flex justify-center w-full md:w-auto mb-4 md:mb-0">
           <img
             src="@/assets/images/logo.png"
@@ -11,9 +10,7 @@
           />
         </div>
 
-        <!-- Links -->
         <div class="flex flex-wrap justify-center text-sm w-full md:w-auto">
-          <!-- Navegação -->
           <div class="flex flex-col items-center md:items-start mx-4">
             <h3 class="font-semibold mb-2">Navegação</h3>
             <ul class="space-y-1">
@@ -27,7 +24,6 @@
             </ul>
           </div>
 
-          <!-- Redes Sociais -->
           <div class="flex flex-col items-center md:items-start mx-4">
             <h3 class="font-semibold mb-2">Redes Sociais</h3>
             <ul class="space-y-1">
@@ -39,7 +35,6 @@
             </ul>
           </div>
 
-          <!-- Legais -->
           <div class="flex flex-col items-center md:items-start mx-4">
             <h3 class="font-semibold mb-2">Links Legais</h3>
             <ul class="space-y-1">
@@ -53,25 +48,31 @@
             </ul>
           </div>
 
-          <!-- Contato -->
-          <div class="flex flex-col items-center md:items-start mx-4">
-            <h3 class="font-semibold mb-2">Contato</h3>
-            <p class="text-sm leading-none text-center md:text-left">
-              Endereço Completo<br />
-              Rua Exemplo, 123 – Bairro Industrial, Joinville/SC
-            </p>
-            <p class="text-sm leading-none text-center md:text-left mt-2">
-              Telefone<br />
-              <a href="tel:+5547999999999" class="hover:underline"
-                >(47) 9 9999-9999</a
-              >
-            </p>
-            <p class="text-sm leading-none text-center md:text-left mt-2">
-              E-mail<br />
-              <a href="mailto:contato@empresa.com.br" class="hover:underline"
-                >contato@empresa.com.br</a
-              >
-            </p>
+          <div class="flex flex-col items-center md:items-start mx-4 text-center md:text-left">
+            <h3 class="font-semibold mb-2 w-full">Contato</h3>
+            
+            <div class="text-sm mb-3">
+              <p class="font-semibold">SANTA CATARINA</p>
+              <p class="leading-snug">
+                RUA ALFREDO SCHULZE, 235<br />
+                PIRABEIRABA, JOINVILLE - SC<br />
+                CEP: 89239-210
+              </p>
+            </div>
+            
+            <div class="text-sm mb-3">
+              <p class="font-semibold">SÃO PAULO</p>
+              <p class="leading-snug">
+                AVENIDA DONA MATHIAS JANITELLI MELLIANI, 42<br />
+                VILA MELLIANI, GUARULHOS - SP<br />
+                CEP: 07032-250
+              </p>
+            </div>
+
+            <div class="text-sm">
+                <a href="tel:+5547999999999" class="block hover:underline">(47) 9 9999-9999</a>
+                <a href="mailto:contato@empresa.com.br" class="block hover:underline">contato@empresa.com.br</a>
+            </div>
           </div>
         </div>
       </div>
