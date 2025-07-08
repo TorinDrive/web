@@ -31,7 +31,7 @@ export function useMachineDetails() {
     error.value = null;
 
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/${tableName}/${machineId}`);
+      const response = await axios.get(`https://gray-magpie-780392.hostingersite.com/${tableName}/${machineId}`);
       machineData.value = response.data;
     } catch (err) {
       console.error("Erro ao buscar detalhes da máquina:", err);

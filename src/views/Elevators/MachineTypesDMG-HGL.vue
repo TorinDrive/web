@@ -116,10 +116,9 @@ onMounted(async () => {
   isLoading.value = true;
   error.value = null;
   try {
-    const apiUrlBase = "http://127.0.0.1:8000/api";
     
-    const requests = machineLines.value.map(line => 
-      axios.get(`${apiUrlBase}/${line.tableName}`).catch(err => {
+     const requests = machineLines.value.map(line => 
+      api.get(`/${line.tableName}`).catch(err => { 
         console.warn(`Falha ao buscar dados para ${line.tableName}:`, err.message);
         return { data: [], error: true, tableName: line.tableName };
       })
