@@ -84,7 +84,7 @@ import Footer from "@/components/Footer.vue";
 import MenuElevator from "@/components/Menus/MenuElevator.vue";
 import SectionHeader from "@/components/SectionHeader.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
-import  api  from "@/services/api.js"; 
+import api from "@/services/api.js";
 
 const props = defineProps({
   pageTitle: {
@@ -120,9 +120,8 @@ onMounted(async () => {
   isLoading.value = true;
   error.value = null;
   try {
-    
      const requests = machineLines.value.map(line => 
-      api.get(`/${line.tableName}`).catch(err => { 
+      api.get(`/api/${line.tableName}`).catch(err => { 
         console.warn(`Falha ao buscar dados para ${line.tableName}:`, err.message);
         return { data: [], error: true, tableName: line.tableName };
       })

@@ -119,9 +119,8 @@ onMounted(async () => {
   isLoading.value = true;
   error.value = null;
   try {
-    
      const requests = machineLines.value.map(line => 
-      api.get(`/${line.tableName}`).catch(err => { 
+      api.get(`/api/${line.tableName}`).catch(err => { 
         console.warn(`Falha ao buscar dados para ${line.tableName}:`, err.message);
         return { data: [], error: true, tableName: line.tableName };
       })
