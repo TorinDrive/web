@@ -109,7 +109,7 @@
     <!-- Seção: Formulário de Contato -->
     <section
       id="contato"
-      class="bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-16 max-w-7xl rounded-2xl border-t mx-auto flex justify-center items-center flex-row"
+      class="bg-white px-4 mx-5 sm:mx-4 sm:px-8 md:px-12 lg:px-20 py-16 max-w-7xl lg:mx-auto rounded-2xl border-t  flex justify-center items-center flex-row"
     >
       <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 p-0 lg:p-8 items-center">
       <!-- Formulário -->

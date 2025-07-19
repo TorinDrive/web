@@ -30,9 +30,9 @@
       </div>
 
       <div v-else-if="machineData" class="space-y-12">
-        <div class="bg-white shadow-xl rounded-xl p-6 md:p-8 flex flex-col lg:flex-row justify-between items-start gap-8">
+        <div class="bg-white shadow-xl rounded-xl mx-3 lg:mx-0 p-6 md:p-8 flex flex-col lg:flex-row justify-between items-start gap-8">
           <div class="flex-grow space-y-4">
-            <h2 class="text-3xl font-bold text-slate-800">{{ machineData.codigo }}</h2>
+            <h2 class="text-2xl lg:text-3xl font-bold text-slate-800">{{ machineData.codigo }}</h2>
             <p class="text-slate-600 max-w-prose">
               Visão geral das especificações mais importantes para a máquina de tração modelo <strong>{{ machineData.codigo }}</strong>.
             </p>
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="bg-white shadow-xl rounded-xl overflow-hidden">
+        <div class="bg-white shadow-xl rounded-xl overflow-hidden lg:mx-0 mx-3">
            <h3 class="bg-slate-700 text-white font-semibold text-lg px-6 py-4">Ficha Técnica</h3>
            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
              <div class="p-6 border-b md:border-b-0 md:border-r border-slate-200">
@@ -82,7 +82,7 @@
            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:mx-0 mx-3">
           <DetailCard title="Polia e Cabos">
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between"><span>Diâmetro da Polia:</span> <strong>{{ formatValue(machineData.diametro, 'mm') }}</strong></li>

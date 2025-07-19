@@ -9,7 +9,6 @@ export function useMachineDetails() {
   const isLoading = ref(true);
   const error = ref(null);
 
-  // Pega os parâmetros da rota
   const tableName = route.params.tableName;
   const machineId = route.params.id;
 
@@ -31,7 +30,7 @@ export function useMachineDetails() {
     error.value = null;
 
     try {
-      const response = await axios.get(`https://gray-magpie-780392.hostingersite.com/${tableName}/${machineId}`);
+      const response = await axios.get(`https://gray-magpie-780392.hostingersite.com/api/${tableName}/${machineId}`);
       machineData.value = response.data;
     } catch (err) {
       console.error("Erro ao buscar detalhes da máquina:", err);
