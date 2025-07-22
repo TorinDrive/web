@@ -31,7 +31,7 @@
           <div class="w-1/3 flex flex-col items-start gap-y-8 pt-10">
             <div v-for="component in rightComponents" :key="component.id" class="w-full flex items-center justify-start gap-4 group cursor-pointer">
               <div class="flex-grow h-px bg-red-400"></div>
-              <div class="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center flex-shrink-0 min-w-[180px] transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-2xl group-hover:z-10">
+              <div class="bg-white backdrop-blur-sm p-4 rounded-lg shadow-lg text-center flex-shrink-0 min-w-[180px] transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-2xl group-hover:z-10">
                 <div class="flex justify-center items-center gap-2 mb-2 h-20">
                   <img v-for="img in component.images" :key="img" :src="img" :alt="component.title" class="max-h-full max-w-full object-contain">
                 </div>
@@ -46,7 +46,7 @@
             <div 
               v-for="component in allComponents" 
               :key="component.id"
-              class="w-full max-w-md bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer"
+              class="w-full max-w-md bg-white backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer"
             >
               <div class="flex justify-center items-center gap-2 mb-2 h-24">
                 <img v-for="img in component.images" :key="img" :src="img" :alt="component.title" class="max-h-full max-w-full object-contain">
@@ -78,20 +78,20 @@ const modalImageUrl = ref('');
 // --- DADOS DOS COMPONENTES (sem alterações) ---
 const leftComponents = ref([
   { id: 'l1', title: 'Controle', images: ['/src/assets/images/components/controle.png'] },
-  { id: 'l2', title: 'Limitadores de Velocidade', images: ['/src/assets/images/components/limitadores.png', '/src/assets/images/components/limitadores.png']},
-  { id: 'l3', title: 'Corrediças / Guias de Rolete', images: ['/src/assets/images/components/corredicas.png', '/src/assets/images/components/corredicas.png']},
-  { id: 'l4', title: 'Suportes de Fixação', images: ['/src/assets/images/components/suportes.png', '/src/assets/images/components/suportes.png'] },
-  { id: 'l5', title: 'Reservatórios de Óleo', images: ['/src/assets/images/components/reservatorios.png', '/src/assets/images/components/reservatorios.png'] },
-  { id: 'l6', title: 'Polias de Tração', images: ['/src/assets/images/components/polias.png', '/src/assets/images/components/polias.png'] },
-  { id: 'l7', title: 'Sapatas de Freio', images: ['/src/assets/images/components/placeholder.png', '/src/assets/images/components/placeholder.png'] },
-  { id: 'l8', title: 'Amortecedores', images: ['/src/assets/images/components/placeholder.png', '/src/assets/images/components/placeholder.png'] },
+  { id: 'l2', title: 'Limitadores de Velocidade', images: ['/src/assets/images/components/limitadores1.png', '/src/assets/images/components/limitadores2.png']},
+  { id: 'l3', title: 'Corrediças / Rollers Guide', images: ['/src/assets/images/components/corredicas1.png', '/src/assets/images/components/corredicas2.png']},
+  { id: 'l4', title: 'Guias (Cabina, Contrapeso e Acess)', images: ['/src/assets/images/components/suporte1.png'] },
+  { id: 'l5', title: 'Lubrificadores/ Coletores de Óleo', images: ['/src/assets/images/components/lubrificador1.png', '/src/assets/images/components/lubrificador2.png'] },
+  { id: 'l6', title: 'Polia de Desvio', images: ['/src/assets/images/components/polias1.png', '/src/assets/images/components/polias2.png'] },
+  { id: 'l7', title: 'Freios de Segurança', images: ['/src/assets/images/components/freio1.png', '/src/assets/images/components/freio2.png'] },
+  { id: 'l8', title: 'Amortecedores de Fundo de Poço', images: ['/src/assets/images/components/amortecedor1.png', '/src/assets/images/components/amortecedor2.png'] },
 ]);
 
 const rightComponents = ref([
-  { id: 'r1', title: 'Máquina de Tração', images: ['/src/assets/images/components/placeholder.png'] },
-  { id: 'r2', title: 'Guias de Cabina', images: ['/src/assets/images/components/placeholder.png', '/src/assets/images/components/placeholder.png'] },
-  { id: 'r3', title: 'Cabos de Aço', images: ['/src/assets/images/components/placeholder.png'] },
-  { id: 'r4', title: 'Portas de Cabina', images: ['/src/assets/images/components/placeholder.png'] },
+  { id: 'r1', title: 'Base de Maquina (Completa)', images: ['/src/assets/images/components/base.png'] },
+  { id: 'r2', title: 'Tirantes', images: ['/src/assets/images/components/tirantes.png'] },
+  { id: 'r3', title: 'Cabos de Aço', images: ['/src/assets/images/components/cabo.png'] },
+  { id: 'r4', title: 'Portas de Cabina', images: ['/src/assets/images/components/portas.png'] },
   { id: 'r5', title: 'Exaustor', images: ['/src/assets/images/components/placeholder.png'] },
   { id: 'r6', title: 'Operador de Porta', images: ['/src/assets/images/components/placeholder.png', '/src/assets/images/components/placeholder.png'] },
   { id: 'r7', title: 'Caixa de Passagem e Cabos', images: ['/src/assets/images/components/placeholder.png', '/src/assets/images/components/placeholder.png'] },

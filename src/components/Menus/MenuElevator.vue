@@ -1,8 +1,11 @@
 <template>
+  <div class="py-3 bg-red-gray-500 static">
+
+  </div>
   <header class="bg-white flex items-center justify-between px-6 md:px-8 py-4 shadow-md relative">
     <div class="flex items-center space-x-3">
       <router-link to="/elevators/home">
-        <img src="@/assets/images/logo.png" alt="Logo" class="h-10" />
+        <img src="@/assets/images/logo.png" alt="Logo" class="h-18" />
       </router-link>
     </div>
 
