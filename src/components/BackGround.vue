@@ -2,7 +2,7 @@
   <div
     class="flex flex-col min-h-screen w-full"
     :style="{
-      background: `linear-gradient(to bottom, #C6C6C6 ${color1Intensity}%, #606060 ${color2Intensity}%)`,
+      background: `linear-gradient(to bottom, #fff ${color1Intensity}%, #f2f2f2 ${color2Intensity}%)`,
     }"
   >
     <slot />
